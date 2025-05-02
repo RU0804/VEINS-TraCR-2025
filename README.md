@@ -17,7 +17,7 @@ cd bin
 ./omnetpp
 ```
 
-
+tbd
 
 To save some time launching, remember to add env PATH:
 Go to 
