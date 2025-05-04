@@ -38,6 +38,19 @@ cd ~/Downloads/omnetpp-6.0.3/bin
 ./omnetpp
 ```
 
+### 🔄 Re-Activating the `.venv` Environment After Restart
+
+If you restart your system or open a new terminal, the `.venv` Python environment used by OMNeT++ will not be active by default. You must manually activate it before working with OMNeT++.
+
+#### ✅ Step 1: Manually Activate `.venv`
+
+Run the following commands:
+
+```bash
+cd ~/omnetpp-6.0.3
+source .venv/bin/activate
+```
+
 
 
 ## 🚗 Installing SUMO 1.22.0 from Source (VEINS-Compatible)
