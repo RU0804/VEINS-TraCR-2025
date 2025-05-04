@@ -5,7 +5,10 @@ For Graduate research assistant project.
 
 # Getting Started
 Installing VEINS 5.3.1 on Ubuntu 22.04.
-Reference: Official tutorial[https://veins.car2x.org/tutorial/#step4]; Github installing guide(CN)[https://github.com/Yrongovo/Veins5.2-Ubuntu18.04-Installation-Guide]
+Reference: 
+Official tutorial[https://veins.car2x.org/tutorial/#step4]; Github installing guide(CN)[https://github.com/Yrongovo/Veins5.2-Ubuntu18.04-Installation-Guide]  
+
+OMNeT++ installation guide: {Installation Guide}[https://github.com/RU0804/VEINS-TraCR-2025/blob/main/InstallGuide.pdf]
 
 
 
