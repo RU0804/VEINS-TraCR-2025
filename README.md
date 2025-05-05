@@ -10,7 +10,7 @@ Reference:
 Official tutorial[https://veins.car2x.org/tutorial/#step4]; Github installing guide(CN)[https://github.com/Yrongovo/Veins5.2-Ubuntu18.04-Installation-Guide]  
 
 OMNeT++ installation guide: {Installation Guide}[https://github.com/RU0804/VEINS-TraCR-2025/blob/main/InstallGuide.pdf]
-### 1.1.a OMNeT++ 6.0.3
+### OMNeT++ 6.0.3
 This guide explains how to **Install OMNeT++ 6.0.3 from the pre‑compiled binary `.tgz`, and set up the optional Python virtual environment** recommended by the OMNeT++ team.  
 All commands are intended for **Bash** and have been tested on Ubuntu 22.04.
 
@@ -94,7 +94,7 @@ source .venv/bin/activate
 Then launch OMNeT++.
 
 
-### 1.1.b SUMO 1.22.0 from Source (VEINS-Compatible)
+### SUMO 1.22.0 from Source (VEINS-Compatible)
 
 This section documents how to install **SUMO 1.22.0** from source with minimal dependencies to ensure full compatibility with **VEINS 5.3.1** and **OMNeT++ 6.0.3**.
 
@@ -174,7 +174,7 @@ SUMO version 1.22.0
 
 
 
-### 1.1.c VEINS 5.3.1
+### VEINS 5.3.1
 Download and Extract VEINS. Make a new folder `my`, create `lte` and `ve`, put VEINS into `ve`. Then locate to `examples` folder.
 Example:
 ```bash
@@ -196,7 +196,21 @@ Select and click Next.
 Right click `omnetpp.ini` in veins folder and select `Run As` -> `1 OMNeT++ Simulation`
 
 
+## Error fixing Note
+If you are hitting this error:  
+Exception occurred during launch  
+Reason:  
+Error within Debug UI: java.lang.reflect.InvocationTargetException
 
-
+Here is what ChatGPT told me: `java.lang.reflect.InvocationTargetException` is just Eclipse‑speak for “something blew up while the IDE was trying to start your run configuration.” In almost every VEINS/OMNeT++ setup it comes from a missing or wrong environment variable (usually `SUMO_HOME`) or an invalid launch configuration. 
+**Try this: run the IDE from a shell and watch the console log**
+```bash
+cd ~/omnetpp-6.0.3
+source setenv                    # OMNeT++ paths
+source .venv/bin/activate        # Python venv, if you use it
+cd bin
+./omnetpp -consoleLog
+```
+When the popup appears, the terminal will print a full Java stack‑trace; the last “Caused by” line usually names the real problem (e.g. “Cannot find executable ‘sumo’”). Ask LLM helper about those outputs. My solution to that was -- do not import the veins folder by selecting `/home/joey/omnetpp-6.0.3/samples/my/ve/veins-5.3.1/veins-veins-5.3.1/exapmles/veins` as your path, import the `veins-5.3.1` folder instead -- use `/home/joey/omnetpp-6.0.3/samples/my/ve/veins-5.3.1/veins-veins-5.3.1`.
 
 
