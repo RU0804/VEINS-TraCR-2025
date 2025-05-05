@@ -1,6 +1,4 @@
 # VEINS-TraCR-2025
-For Graduate research assistant project.
-
 
 
 # 1. Getting Started
