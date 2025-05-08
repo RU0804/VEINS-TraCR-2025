@@ -210,7 +210,12 @@ cd bin
 ./omnetpp -consoleLog
 ```
 When the popup appears, the terminal will print a full Java stack‑trace; the last “Caused by” line usually names the real problem (e.g. “Cannot find executable ‘sumo’”). Ask LLM helper about those outputs. My solution to that was -- do not import the veins folder by selecting `/home/joey/omnetpp-6.0.3/samples/my/ve/veins-5.3.1/veins-veins-5.3.1/exapmles/veins` as your path, import the `veins-5.3.1` folder instead -- use `/home/joey/omnetpp-6.0.3/samples/my/ve/veins-5.3.1/veins-veins-5.3.1`.
-
+Remember to open the port 9999
+```bash
+cd ~/omnetpp-6.0.3/samples/my/ve/veins-5.3.1/veins-veins-5.3.1/
+python sumo-launchd.py -vv -c sumo-gui
+```
+Then switch back to OMNeT++ to run the `.ini` file.
 
 
 # Development
